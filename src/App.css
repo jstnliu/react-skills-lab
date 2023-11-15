@@ -5,3 +5,14 @@
   text-align: center;
 }
 
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thistle-text {
+  color: #D8BFD8;
+}

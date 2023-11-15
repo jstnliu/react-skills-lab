@@ -1,9 +1,15 @@
-import React from 'react'
+// import matching CSS file
+import './SkillListItem.css'
 
-export default function SkillListItem() {
+export default function SkillListItem({ skill, index }) {
   return (
+  <div className='SkillListItem'>
     <li>
-        SkillListItem
+      { skill.name }
     </li>
+    <li className='level'>
+      Level { skill.level }
+    </li>
+  </div>
   )
 }
