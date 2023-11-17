@@ -5,17 +5,21 @@ import NewSkillForm from './NewSkillForm'
 import { useState } from 'react'
 
 const initialSkills = [
-  {name: 'Mobility', level: 40},
-  {name: 'Resilience', level: 60 },
-  {name: 'Recovery', level: 100},
-  {name: 'Discipline', level: 70},
-  {name: 'Intellect', level: 40},
-  {name: 'Strength', level: 50},
+  {skill: 'Mobility', level: 40},
+  {skill: 'Resilience', level: 60 },
+  {skill: 'Recovery', level: 100},
+  {skill: 'Discipline', level: 70},
+  {skill: 'Intellect', level: 40},
+  {skill: 'Strength', level: 50},
 ]  
 
 function App() {
 
   const [skills, setSkills] = useState(initialSkills)
+
+  function addSkill(skill) {
+    setSkills([...skills, skill])
+  }
 
   return (
     <div className='App thistle-text'>
@@ -23,7 +27,7 @@ function App() {
      <SkillList skills={skills} />
      <hr></hr>
      {/* Add NewSkillForm component */}
-     <NewSkillForm skills={skills} />
+     <NewSkillForm addSkill={ addSkill }/>
     </div>
   )
 }
